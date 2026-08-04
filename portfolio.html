@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spiderweb — Portfolio</title>
+<meta name="description" content="Websites, stores and Telegram bots built by Spiderweb — a student-run web studio in Addis Ababa.">
+<link rel="icon" type="image/png" href="img/logo.png">
+<link rel="apple-touch-icon" href="img/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Spiderweb — Portfolio">
+<meta property="og:description" content="Websites, stores and Telegram bots built by Spiderweb.">
+<meta property="og:image" content="img/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#14070C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="portfolio" id="top">
+<a class="skip" href="#main">Skip to content</a>
+<div class="scroll-thread" id="scrollThread" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="veil" id="veil" aria-hidden="true"><div class="v-ring"></div><img class="v-logo" src="img/logo.png" alt=""></div>
+
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="Spiderweb home"><img class="brand-mark" src="img/logo.png" alt="">SPIDER<b>WEB</b></a>
+  <nav aria-label="Main">
+    <ul class="nav-links">
+      <li><a href="index.html" data-nav="home">Home</a></li>
+      <li><a href="portfolio.html" data-nav="portfolio">Portfolio</a></li>
+      <li><a href="about.html" data-nav="about">About Us</a></li>
+      <li><a href="products.html" data-nav="products">Products</a></li>
+      <li><a href="contact.html" data-nav="contact">Contact</a></li>
+      <li><a class="btn btn-primary nav-cta" href="contact.html">Start a project</a></li>
+    </ul>
+  </nav>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+
+<div class="m-menu" id="mMenu">
+  <a href="index.html"><small>01</small>Home</a>
+  <a href="portfolio.html"><small>02</small>Portfolio</a>
+  <a href="about.html"><small>03</small>About Us</a>
+  <a href="products.html"><small>04</small>Products</a>
+  <a href="contact.html"><small>05</small>Contact</a>
+</div>
+
+<div class="g-spider" id="globalSpider" aria-hidden="true"><div class="thread"></div><div class="sway"><svg viewBox="0 0 64 64" fill="none"><g stroke="#e6242e" stroke-width="2.5" stroke-linecap="round"><path d="M24 28Q10 20 8 8"/><path d="M22 34Q6 30 4 20"/><path d="M22 40Q8 44 6 56"/><path d="M26 46Q16 54 14 62"/><path d="M40 28Q54 20 56 8"/><path d="M42 34Q58 30 60 20"/><path d="M42 40Q56 44 58 56"/><path d="M38 46Q48 54 50 62"/></g><circle cx="32" cy="22" r="7" fill="#e6242e"/><ellipse cx="32" cy="39" rx="12" ry="14" fill="#e6242e"/><ellipse class="eye" cx="29" cy="21" rx="2.6" ry="4.2" fill="#fff"/><ellipse class="eye" cx="35" cy="21" rx="2.6" ry="4.2" fill="#fff"/></svg></div></div>
+
+<main id="main">
+  <div class="page-hero">
+    <div class="web-corner" aria-hidden="true"></div>
+    <p class="kicker reveal">Our work</p>
+    <h1 class="display reveal">Webs we've <span class="red">spun</span>.</h1>
+    <p class="lede reveal">Every project below is a real business we helped get online. New work is being added as we speak — the reserved slots fill in the moment clients say yes.</p>
+  </div>
+
+  <div class="section" style="padding-top:1rem">
+    <p class="pf-count reveal" id="pfCount"></p>
+    <div class="filters reveal">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="web">Websites</button>
+      <button class="chip" data-filter="shop">E-Commerce</button>
+      <button class="chip" data-filter="bot">Telegram Bots</button>
+    </div>
+    <div class="pf-grid" id="pfGrid"></div>
+    <div class="cta reveal" style="margin-top:4rem">
+      <h2 class="display">Want your project <span class="red">up here next?</span></h2>
+      <div class="cta-btns"><a class="btn btn-primary" href="contact.html">Start a project</a></div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="foot-mark" aria-hidden="true">SPIDERWEB</div>
+  <div class="foot-grid">
+    <div><img class="foot-logo" src="img/logo.png" alt="Spiderweb logo"><h5>The studio</h5><p>A student-run web studio spinning fast, honest websites, stores and Telegram bots for businesses that deserve to be seen.</p></div>
+    <div><h5>Pages</h5><ul><li><a href="index.html">Home</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h5>Services</h5><ul><li><a href="index.html">Web design &amp; dev</a></li><li><a href="index.html">E-commerce</a></li><li><a href="index.html">Telegram bots</a></li><li><a href="index.html">SEO &amp; speed</a></li><li><a href="index.html">Care plans</a></li></ul></div>
+    <div><h5>Reach us</h5><ul><li><a data-mail href="mailto:hello@spiderweb.dev"><span data-cfg="email">hello@spiderweb.dev</span></a></li><li><a data-tg href="https://t.me/spiderwebhst" target="_blank" rel="noopener"><span data-cfg="telegramHandle">@spiderwebhst</span> on Telegram</a></li></ul></div>
+  </div>
+  <div class="foot-bar"><span>© <span id="year"></span> Spiderweb · Built with 🕷 by students, built to last.</span><a href="#top">Back to top ↑</a></div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="js/main.js"></script>
+</body>
+</html>
