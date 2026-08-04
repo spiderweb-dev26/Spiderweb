@@ -1,0 +1,6 @@
+name = "spiderweb"
+compatibility_date = "2026-07-01"
+main = "src/index.js"
+
+[assets]
+directory = "."
