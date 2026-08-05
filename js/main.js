@@ -106,3 +106,54 @@ const yr=document.getElementById('year');if(yr)yr.textContent=new Date().getFull
 function ready(){document.body.classList.add('loaded');if(!reduce)startReveals();else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));}
 if(reduce||document.readyState==='complete')setTimeout(ready,reduce?0:450);
 window.addEventListener('load',()=>setTimeout(ready,450));setTimeout(ready,2500);
+
+/* SPIDERWEB: contact button loading spinner + anti-double-submit */
+(function () {
+  var style = document.createElement("style");
+  style.textContent = "@keyframes swspin{to{transform:rotate(360deg)}}.sw-busy{opacity:.75;pointer-events:none}.sw-busy .sw-spin{display:inline-block;width:14px;height:14px;border:2px solid #fff;border-top-color:transparent;border-radius:50%;animation:swspin .8s linear infinite;vertical-align:-2px;margin-right:8px}";
+  document.head.appendChild(style);
+
+  function formButton(form) {
+    return form.querySelector('button[type="submit"], input[type="submit"], button');
+  }
+  function unlock(form, btn, sent) {
+    delete form.dataset.swBusy;
+    btn.classList.remove("sw-busy");
+    if (sent) {
+      btn.disabled = true;
+      btn.innerHTML = "Sent — we got you! 🕸";
+    } else {
+      btn.disabled = false;
+      btn.innerHTML = btn.dataset.swOrig || btn.innerHTML;
+    }
+  }
+
+  document.addEventListener("submit", function (e) {
+    var form = e.target;
+    if (!form || form.dataset.swBusy) return;
+    if (form.checkValidity && !form.checkValidity()) return;
+    var btn = formButton(form);
+    if (!btn) return;
+    form.dataset.swBusy = "1";
+    btn.dataset.swOrig = btn.innerHTML;
+    btn.classList.add("sw-busy");
+    btn.disabled = true;
+    btn.innerHTML = '<span class="sw-spin"></span>Spinning the web…';
+    setTimeout(function () { if (form.dataset.swBusy) unlock(form, btn, false); }, 12000);
+  }, true);
+
+  var realFetch = window.fetch;
+  window.fetch = function () {
+    var p = realFetch.apply(this, arguments);
+    try {
+      var url = String(arguments[0] && arguments[0].url ? arguments[0].url : arguments[0]);
+      if (url.indexOf("/lead") !== -1) {
+        var busyForm = document.querySelector("form[data-sw-busy]");
+        var btn = busyForm ? formButton(busyForm) : null;
+        p.then(function (res) { if (busyForm && btn) unlock(busyForm, btn, res.ok); })
+         .catch(function () { if (busyForm && btn) unlock(busyForm, btn, false); });
+      }
+    } catch (e) {}
+    return p;
+  };
+})();
