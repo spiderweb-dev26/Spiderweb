@@ -8,7 +8,7 @@ const CONFIG = {
   botToken: '',                        // keep empty; the API holds the token now
   chatId: ''
 };
-const API_URL = 'https://spiderweb-api.onrender.com';   // after DNS: https://api.spiderweb.lol
+const API_URL = 'https://api.spiderweb.lol';   // after DNS: https://api.spiderweb.lol
 const FB_PROJECT = 'spiderweb-d10c7';
 const FB_KEY = 'AIzaSyAVp_wqzt5gn54y0-0hFf7u9GrTgV_xEls';
 
