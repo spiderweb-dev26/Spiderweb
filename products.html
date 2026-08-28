@@ -1,89 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spiderweb — Products</title>
-<meta name="description" content="Website packages, online stores and custom Telegram bots from Spiderweb.">
-<link rel="icon" type="image/png" href="img/logo.png">
-<link rel="apple-touch-icon" href="img/logo.png">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Spiderweb — Products">
-<meta property="og:description" content="Website packages, online stores and custom Telegram bots from Spiderweb.">
-<meta property="og:image" content="img/logo.png">
-<meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#14070C">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Products — Spiderweb</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314070C'/%3E%3Ccircle cx='32' cy='26' r='6' fill='%23e6242e'/%3E%3Cellipse cx='32' cy='40' rx='10' ry='12' fill='%23e6242e'/%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body data-page="products" id="top">
-<a class="skip" href="#main">Skip to content</a>
-<div class="scroll-thread" id="scrollThread" aria-hidden="true"></div>
-<div class="grain" aria-hidden="true"></div>
-<div class="veil" id="veil" aria-hidden="true"><div class="v-ring"></div><img class="v-logo" src="img/logo.png" alt=""></div>
-
-<header class="nav">
-  <a class="brand" href="index.html" aria-label="Spiderweb home"><img class="brand-mark" src="img/logo.png" alt="">SPIDER<b>WEB</b></a>
-  <nav aria-label="Main">
-    <ul class="nav-links">
-      <li><a href="index.html" data-nav="home">Home</a></li>
-      <li><a href="portfolio.html" data-nav="portfolio">Portfolio</a></li>
-      <li><a href="about.html" data-nav="about">About Us</a></li>
-      <li><a href="products.html" data-nav="products">Products</a></li>
-      <li><a href="contact.html" data-nav="contact">Contact</a></li>
-      <li><a class="btn btn-primary nav-cta" href="contact.html">Start a project</a></li>
-    </ul>
-  </nav>
-  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<style>
+:root{--bg:#120609;--bg2:#1b0b10;--panel:#231017;--line:rgba(230,36,46,.18);--red:#e6242e;--deep:#8f1220;--blue:#3d7bff;--ink:#f7eef0;--mut:#c2a9ae;--disp:'Bangers',cursive;--body:'Space Grotesk',sans-serif;--lat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cpath d='M32 0L64 32L32 64L0 32Z' fill='none' stroke='%23e6242e' stroke-opacity='.05'/%3E%3C/svg%3E")}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--body);color:var(--ink);background:radial-gradient(900px 620px at 88% -10%,rgba(230,36,46,.14),transparent 60%),var(--lat),var(--bg);min-height:100vh;line-height:1.6}
+::selection{background:var(--red);color:#fff}.display{font-family:var(--disp);text-transform:uppercase;letter-spacing:.03em;line-height:.95}
+.kicker{display:flex;align-items:center;gap:.7rem;font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:var(--red)}.kicker::before{content:"";width:26px;height:2px;background:var(--red)}
+.mut{color:var(--mut);font-size:.85rem}
+.btn{font-family:var(--disp);letter-spacing:.08em;text-transform:uppercase;font-size:.9rem;padding:.6rem 1.1rem;border:2px solid var(--red);background:var(--red);color:#fff;cursor:pointer;box-shadow:4px 4px 0 var(--deep);transition:transform .15s,box-shadow .15s;text-decoration:none;display:inline-block}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--deep)}
+.btn.ghost{background:transparent;color:var(--mut);border-color:var(--line);box-shadow:none}.btn.ghost:hover{color:var(--ink);border-color:var(--red)}
+header{display:flex;align-items:center;justify-content:space-between;padding:1.1rem clamp(1rem,3vw,2.6rem);border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(18,6,9,.95);backdrop-filter:blur(6px);z-index:10}
+.logo{display:flex;align-items:center;gap:.8rem;text-decoration:none}.logo svg{width:40px}.logo .t{font-family:var(--disp);font-size:1.4rem;color:var(--ink)}.logo .t b{color:var(--red)}
+nav{display:flex;gap:1.6rem;align-items:center}nav a{color:var(--mut);text-decoration:none;font-size:.9rem}nav a:hover,nav a.active{color:var(--ink)}
+main{padding:clamp(2rem,5vw,4rem) clamp(1rem,3vw,2.6rem);max-width:1100px;margin:0 auto}
+h1{font-size:clamp(2.6rem,6vw,4.2rem);margin:.6rem 0 1rem}h1 .w{color:#fff;text-shadow:4px 4px 0 var(--deep)}h1 .b{color:var(--blue);text-shadow:4px 4px 0 var(--deep)}
+.intro{max-width:560px;margin-bottom:2.6rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.3rem}
+.card{background:var(--panel);border:1px solid var(--line);padding:1.5rem;position:relative;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:var(--red)}
+.card h3{font-size:1.3rem}
+.price{font-family:var(--disp);color:var(--blue);font-size:1.7rem;text-shadow:3px 3px 0 var(--deep);margin:.4rem 0 .2rem}
+.price small{font-size:.9rem;color:var(--mut);text-shadow:none}
+.card ul{list-style:none;margin:1rem 0 1.3rem}
+.card li{font-size:.8rem;color:var(--mut);padding:.5rem 0;border-bottom:1px dashed var(--line)}
+.card li::before{content:"◆ ";color:var(--red)}
+.flag{position:absolute;top:-11px;right:14px;background:var(--red);color:#fff;font-family:var(--disp);font-size:.72rem;letter-spacing:.1em;padding:.25rem .7rem;transform:rotate(3deg);box-shadow:3px 3px 0 var(--deep)}
+.foot{margin-top:3rem;background:var(--panel);border:1px solid var(--line);padding:1.6rem;display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}
+@media(max-width:760px){nav a:not(.btn){display:none}}
+</style></head><body>
+<header>
+ <a href="index.html" class="logo"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#14070C"/><circle cx="32" cy="26" r="6" fill="#e6242e"/><ellipse cx="32" cy="40" rx="10" ry="12" fill="#e6242e"/></svg><span class="t">SPIDER<b>WEB</b></span></a>
+ <nav><a href="index.html">Home</a><a href="portfolio.html">Portfolio</a><a href="about.html">About Us</a><a href="products.html" class="active">Products</a><a href="contact.html">Contact</a><a href="contact.html" class="btn">Start a Project</a></nav>
 </header>
+<main>
+ <p class="kicker">Products & packages</p>
+ <h1 class="display"><span class="w">The</span> <span class="b">Loadout</span>.</h1>
+ <p class="intro mut">Pick a starting point or ask for something fully custom. Prices are in Ethiopian Birr — final specs lock in after a quick chat, and every package below is a real offer, not a vibe.</p>
 
-<div class="m-menu" id="mMenu">
-  <a href="index.html"><small>01</small>Home</a>
-  <a href="portfolio.html"><small>02</small>Portfolio</a>
-  <a href="about.html"><small>03</small>About Us</a>
-  <a href="products.html"><small>04</small>Products</a>
-  <a href="contact.html"><small>05</small>Contact</a>
-</div>
+ <div class="grid">
+  <div class="card"><h3 class="display">Starter Web</h3><p class="price">15,000 <small>ETB</small></p>
+   <ul><li>One-page custom site</li><li>Mobile-first design</li><li>Contact form + WhatsApp link</li><li>7-day delivery</li></ul>
+   <a class="btn ghost" href="contact.html">Start this project →</a></div>
 
-<div class="g-spider" id="globalSpider" aria-hidden="true"><div class="thread"></div><div class="sway"><svg viewBox="0 0 64 64" fill="none"><g stroke="#e6242e" stroke-width="2.5" stroke-linecap="round"><path d="M24 28Q10 20 8 8"/><path d="M22 34Q6 30 4 20"/><path d="M22 40Q8 44 6 56"/><path d="M26 46Q16 54 14 62"/><path d="M40 28Q54 20 56 8"/><path d="M42 34Q58 30 60 20"/><path d="M42 40Q56 44 58 56"/><path d="M38 46Q48 54 50 62"/></g><circle cx="32" cy="22" r="7" fill="#e6242e"/><ellipse cx="32" cy="39" rx="12" ry="14" fill="#e6242e"/><ellipse class="eye" cx="29" cy="21" rx="2.6" ry="4.2" fill="#fff"/><ellipse class="eye" cx="35" cy="21" rx="2.6" ry="4.2" fill="#fff"/></svg></div></div>
+  <div class="card"><span class="flag">Most requested</span><h3 class="display">Business Pro</h3><p class="price">45,000 <small>ETB</small></p>
+   <ul><li>Up to 5 custom pages</li><li>SEO + Google setup</li><li>Analytics dashboard</li><li>1 month free support</li></ul>
+   <a class="btn ghost" href="contact.html">Start this project →</a></div>
 
-<main id="main">
-  <div class="page-hero">
-    <div class="web-corner" aria-hidden="true"></div>
-    <p class="kicker reveal">Products &amp; packages</p>
-    <h1 class="display reveal">The <span class="blue">loadout</span>.</h1>
-    <p class="lede reveal">Pick a starting point or ask for something fully custom. Final names, prices and specs are being locked in — every package below is a real offer in the making.</p>
-  </div>
+  <div class="card"><h3 class="display">Online Store</h3><p class="price">90,000 <small>ETB</small></p>
+   <ul><li>Full storefront + checkout</li><li>CBE Birr & mobile money payments</li><li>Inventory management</li><li>Hands-on training</li></ul>
+   <a class="btn ghost" href="contact.html">Start this project →</a></div>
 
-  <div class="section" style="padding-top:1rem">
-    <!-- PRODUCTS: update names, prices and feature lists when ready -->
-    <div class="prod-grid">
-      <div class="prod-card reveal"><h3>Starter Web</h3><div class="prod-price">TBA</div><ul><li>One-page custom site</li><li>Mobile-first design</li><li>Contact form + WhatsApp link</li><li>7-day delivery</li></ul><div class="prod-tba">Spec sheet incoming</div></div>
-      <div class="prod-card reveal"><div class="prod-flag">Most requested</div><h3>Business Pro</h3><div class="prod-price">TBA</div><ul><li>Up to 5 custom pages</li><li>SEO + Google setup</li><li>Analytics dashboard</li><li>1 month free support</li></ul><div class="prod-tba">Spec sheet incoming</div></div>
-      <div class="prod-card reveal"><h3>Online Store</h3><div class="prod-price">TBA</div><ul><li>Full storefront + checkout</li><li>Card &amp; mobile money payments</li><li>Inventory management</li><li>Hands-on training</li></ul><div class="prod-tba">Spec sheet incoming</div></div>
-      <div class="prod-card reveal"><h3>Telegram Bot</h3><div class="prod-price">TBA</div><ul><li>Orders &amp; FAQ automation</li><li>Payment alerts</li><li>Broadcasts to subscribers</li><li>Connects to your website</li></ul><div class="prod-tba">Spec sheet incoming</div></div>
-    </div>
-    <div class="cta reveal" style="margin-top:4rem">
-      <h2 class="display">Not sure which fits? <span class="red">Ask us.</span></h2>
-      <div class="cta-btns"><a class="btn btn-primary" href="contact.html">Get advice — free</a><a class="btn btn-blue" data-tg href="https://t.me/spiderwebhst" target="_blank" rel="noopener">Chat on Telegram ↗</a></div>
-    </div>
-  </div>
+  <div class="card"><h3 class="display">Telegram Bot</h3><p class="price">35,000 <small>ETB</small></p>
+   <ul><li>Orders & FAQ automation</li><li>Payment alerts</li><li>Broadcasts to subscribers</li><li>Connects to your website</li></ul>
+   <a class="btn ghost" href="contact.html">Start this project →</a></div>
+ </div>
+
+ <div class="foot"><p class="mut" style="flex:1;min-width:220px">Need something custom? Mix, match, or describe it — quotes are free and replies land within 48 hours.</p><a class="btn" href="contact.html">Get a free quote →</a></div>
 </main>
-
-<footer class="footer">
-  <div class="foot-mark" aria-hidden="true">SPIDERWEB</div>
-  <div class="foot-grid">
-    <div><img class="foot-logo" src="img/logo.png" alt="Spiderweb logo"><h5>The studio</h5><p>A student-run web studio spinning fast, honest websites, stores and Telegram bots for businesses that deserve to be seen.</p></div>
-    <div><h5>Pages</h5><ul><li><a href="index.html">Home</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div><h5>Services</h5><ul><li><a href="index.html">Web design &amp; dev</a></li><li><a href="index.html">E-commerce</a></li><li><a href="index.html">Telegram bots</a></li><li><a href="index.html">SEO &amp; speed</a></li><li><a href="index.html">Care plans</a></li></ul></div>
-    <div><h5>Reach us</h5><ul><li><a data-mail href="mailto:hello@spiderweb.dev"><span data-cfg="email">hello@spiderweb.dev</span></a></li><li><a data-tg href="https://t.me/spiderwebhst" target="_blank" rel="noopener"><span data-cfg="telegramHandle">@spiderwebhst</span> on Telegram</a></li></ul></div>
-  </div>
-  <div class="foot-bar"><span>© <span id="year"></span> Spiderweb · Built with 🕷 by students, built to last.</span><a href="#top">Back to top ↑</a></div>
-</footer>
-
-<div class="toast" id="toast" role="status"></div>
-<script src="js/main.js"></script>
-</body>
-</html>
+</body></html>
